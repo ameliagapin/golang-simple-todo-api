@@ -25,10 +25,10 @@ func initRouter() *gin.Engine {
 	v1 := router.Group("/api/v1/todos")
 	{
 		v1.POST("/", controller.CreateTodo)
-		// v1.GET("/", FetchAllTodo)
-		// v1.GET("/:id", FetchSingleTodo)
-		// v1.PUT("/:id", UpdateTodo)
-		// v1.DELETE("/:id", DeleteTodo)
+		v1.GET("/", controller.FetchAllTodo)
+		v1.GET("/:id", controller.FetchSingleTodo)
+		v1.PUT("/:id", controller.UpdateTodo)
+		v1.DELETE("/:id", controller.DeleteTodo)
 	}
 
 	return router
