@@ -57,8 +57,6 @@ func (ctrl Controller) FetchAllTodo(c *gin.Context) {
 		completed := false
 		if item.Completed == 1 {
 			completed = true
-		} else {
-			completed = false
 		}
 
 		_todos = append(_todos, models.TransformedTodo{ID: item.ID, Title: item.Title, Completed: completed})
